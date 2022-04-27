@@ -131,11 +131,22 @@ class Contact{
     }
 
 }
+let addressBook = new Array();
 
-try{
-let contact = new Contact("Krunali","Lole","Old Subedhar","Nagpur","Maharashtra",440024,9561272972,"Krunalilole01@gmail.com");
-console.log(contact.toString());
-}catch(e)
-{
-    console.error(e);
+function addContact(...params) {
+    try{
+    let newContact = new Contact(params[0],params[1],params[2],params[3],params[4],params[5],params[6],params[7]);
+    addressBook.push(newContact);
+    }catch(e){
+        console.error(e);
+    }
+    
 }
+
+addContact("Krunali","Lole","Old Subedhar","Nagpur","Maharashtra",440024,9561272972,"Krunalilole01@gmail.com");
+addContact("Rohit","Lole","New Subedhar","Nagpur","Maharashtra",440026,7777979699,"rohitlole@outlook.com");
+addContact("Deepika","Ganorkar","Shinde Nagar","Amravati","Maharashtra",440021,9874563210,"deepg@gmail.com");
+addContact("Sagar","Mode","Central City","Gondia","MP",440023,7894561230,"sagarm@yahoo.com");
+addContact("Shub","Pande","North Zone","Chandrapur","Maharashtra",440025,1234567890,"shubp@gmail.com");
+console.log(addressBook.toString())
+
