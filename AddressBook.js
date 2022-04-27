@@ -154,6 +154,13 @@ function editContact(...params){
     }
     addressBook[index] = newContact;
 }
+function deleteContact(...params){
+    firstname = params[0];
+    lastname = params[1]; 
+    let index = addressBook.findIndex(x=>x.firstName == firstname && x.lastName == lastname);
+    // delete addressBook[index];
+    addressBook.splice(index,1);
+}
 
 addContact("Krunali","Lole","Old Subedhar","Nagpur","Maharashtra",440024,9561272972,"Krunalilole01@gmail.com");
 addContact("Rohit","Lole","New Subedhar","Nagpur","Maharashtra",440026,7777979699,"rohitlole@outlook.com");
@@ -162,4 +169,10 @@ addContact("Sagar","Mode","Central City","Gondia","MP",440023,7894561230,"sagarm
 addContact("Shub","Pande","North Zone","Chandrapur","Maharashtra",440025,1234567890,"shubp@gmail.com");
 editContact("Shub","Pande","North Zone","Chandrapur","Maharashtra",440024,1234567890,"shubp@gmail.com");
 console.log(addressBook.toString())
+
+console.log(addressBook.length);
+
+deleteContact("Shub","Pande");
+console.log(addressBook.toString());
+console.log(addressBook.length);
 
