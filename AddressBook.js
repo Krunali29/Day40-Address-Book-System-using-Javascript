@@ -187,6 +187,10 @@ function viewContactsByCity(city,array){
     let contacts = array.filter(e=>e.city == city).map(e=>e.firstName+" "+e.lastName);
     return contacts;
 }
+function getContactsCountByCity(city,array){
+    let count = array.filter(e=>e.city == city).reduce((totalCount,e)=>totalCount+1,0);
+    return count;
+}
 
 
 addContact("Krunali","Lole","Old Subedhar","Nagpur","Maharashtra",440024,9561272972,"Krunalilole01@gmail.com");
@@ -223,3 +227,7 @@ if(contacts.length>0)
 console.log("The people in the city "+City+" are :"+contacts);
 else
 console.log("No people found in the city");
+
+City = "Nagpur";
+let contactsCount = getContactsCountByCity(City,addressBook);
+console.log("The no of people in the city "+City+" is : "+contactsCount);
